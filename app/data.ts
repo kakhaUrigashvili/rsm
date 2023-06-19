@@ -57,7 +57,7 @@ export const sections = {
         dates: "Feb 2022 - Present",
         description: [
           "Sole maintainer of EKS (Kubernetes) cluster shared by multiple teams. Created automated process to for zero downtime cluster upgrades. Installed and configured numerous tools for scalability, observability, functionality of the cluster: Cluster Autoscaler, AWS External Secrets, Fluent Bit, Elastic Metricbeat.",
-          "Created a self-hosted GitHub Actions runner with an autoscaling tool as part of an internal open-source project adopted by the entire company.",
+          "Created a self-hosted GitHub Actions runner with an autoscaling tool as part of an internal open-source project adopted by the entire company. The reusable solution comprised the following technical components required to accomplish the goal: 5 AWS Lambdas (Node.js), a queue, a webhook, and an EC2 Autoscaling group.",
           "Successfully performed a zero-downtime migration of multiple microservices between AWS Accounts. The migration included transferring DynamoDB tables and S3 buckets, in addition to migrating the application itself.",
         ],
       },
@@ -78,7 +78,7 @@ export const sections = {
         location: "Seattle",
         dates: "Jan 2020 - Feb 2021",
         description: [
-          "Working on tools and SDKs for Alexa custom skills development.",
+          "I worked on open-source tools (SDKs, CLI) for developers of Alexa custom skills. The tools were written in TypeScript (Node.js), Java and Python.",
           "I was involved in the development of Alexa CLI v2, where I designed and implemented a process to automatically generate 100+ CLI commands from Swagger docs, eliminating the need for manual commands as in v1.",
         ],
       },
