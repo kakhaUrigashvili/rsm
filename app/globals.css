@@ -3,32 +3,232 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --text-primary: 55, 65, 81;
+  --text-secondary: 107, 114, 128;
+  --accent-blue: 59, 130, 246;
+  --background-rgb: 249, 250, 251;
+  --card-rgb: 255, 255, 255;
+  --border-rgb: 229, 231, 235;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --text-primary: 229, 231, 235;
+    --text-secondary: 156, 163, 175;
+    --accent-blue: 96, 165, 250;
+    --background-rgb: 17, 24, 39;
+    --card-rgb: 31, 41, 55;
+    --border-rgb: 75, 85, 99;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--text-primary));
+  background: rgb(var(--background-rgb));
+  min-height: 100vh;
+  transition: all 0.3s ease;
 }
 
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modern card styling */
+.modern-card {
+  background: rgb(var(--card-rgb));
+  border: 1px solid rgb(var(--border-rgb));
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.modern-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Skill tags */
+.skill-tag {
+  background: rgb(var(--accent-blue));
+  color: white;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Section headers */
+.section-header {
+  color: rgb(var(--accent-blue));
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.only-print {
+  display: none
+} 
 
 @media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  .only-print {
+    display: block;
+    font-size: 1.2rem;
+    color: black !important;
+  }
+
   body {
-    background: white;
+    background: white !important;
+    color: black !important;
+    font-size: 10pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .modern-card {
+    background: white !important;
+    box-shadow: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .skill-tag {
+    background: none !important;
+    color: black !important;
+    border: none !important;
+    font-size: 11pt !important;
+    padding: 0 !important;
+    margin: 0 4pt 0 0 !important;
+    border-radius: 0 !important;
+    display: inline !important;
+  }
+
+  .skill-tag:after {
+    content: ", " !important;
+  }
+
+  .skill-tag:last-child:after {
+    content: "" !important;
+  }
+
+  .section-header {
+    color: black !important;
+    font-size: 16pt !important;
+    margin-bottom: 4pt !important;
+    page-break-after: avoid !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid !important;
+    color: black !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    margin-bottom: 2pt !important;
+  }
+
+  h4 {
+    font-size: 12pt !important;
+    margin-bottom: 1pt !important;
+  }
+
+  p,
+  li {
+    font-size: 11pt !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1pt !important;
+    color: black !important;
+  }
+
+  /* Name in navbar - make it black and smaller for print */
+  nav span {
+    color: black !important;
+    font-size: 18pt !important;
+  }
+
+  /* All text elements should be black */
+  *,
+  *::before,
+  *::after {
+    color: black !important;
+  }
+
+  ul {
+    margin: 0 !important;
+    padding-left: 12pt !important;
+  }
+
+  li {
+    margin-bottom: 1pt !important;
+  }
+
+  /* Prevent page breaks within content blocks */
+  .modern-card,
+  section>div>div {
+    page-break-inside: avoid !important;
+  }
+
+  /* Ensure proper spacing between sections */
+  section {
+    margin-bottom: 4pt !important;
+    margin-top: 0 !important;
+  }
+
+  /* Reduce gaps in skills section container */
+  #skills .modern-card,
+  #experience .modern-card,
+  #education .modern-card,
+  #certifications .modern-card {
+    margin: 0 !important;
+    padding: 4pt 0 !important;
+  }
+
+  /* Skills section specific spacing */
+  #skills {
+    margin-bottom: 2pt !important;
+  }
+
+  #skills .flex {
+    line-height: 1.2 !important;
+    margin: 0 !important;
+  }
+
+  /* Remove all rounded corners and shadows for print */
+  * {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* Optimize grid layout for print */
+  .grid {
+    display: block !important;
+  }
+
+  .lg\\:col-span-1,
+  .lg\\:col-span-2 {
+    width: 100% !important;
+    margin-bottom: 4pt !important;
   }
 }

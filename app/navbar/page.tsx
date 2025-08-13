@@ -23,28 +23,30 @@ export default function Navbar() {
     }
 
     return (
-        <>
-            <nav className="bg-white border-gray-200 dark:bg-gray-900 print:border-b-2 print:border-gray-500">
-                <div className="px-[2.5rem] lg:px-[6.2rem] py-4 flex flex-wrap items-center justify-between">
-                    <a href="#" className="flex">
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{contactInfo.name}</span>
+        <>  
+            <h1 className="text-center only-print">{contactInfo.name} {contactInfo.printLinks.map(link => ` | ${link.display}`)}
+            </h1>
+            <div className="max-w-7xl mx-auto no-print">
+                <nav className="modern-card mx-4 mt-4 mb-8 print:mx-0 print:mt-0 print:mb-4 print:border-b-2 print:border-gray-500 print:rounded-none">
+                <div className="px-6 lg:px-8 py-6 flex flex-wrap items-center justify-between">
+                    <a href="#" className="flex group">
+                        <span className="self-center text-3xl font-bold whitespace-nowrap text-blue-600 dark:text-blue-400 transition-all duration-300 group-hover:scale-105">{contactInfo.name}</span>
                     </a>
-                    <button onClick={handleClick} type="button" className="print:hidden inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <button onClick={handleClick} type="button" className="print:hidden inline-flex items-center p-3 ml-3 text-gray-600 rounded-xl md:hidden hover:bg-gray-100 focus:outline-none transition-all duration-200 dark:text-gray-300 dark:hover:bg-gray-700" aria-controls="navbar-default" aria-expanded="false">
                         <span className="sr-only">Open Menu</span>
                         <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
                     </button>
                     <div className={(responsiveMenuHidden ? "hidden" : "") + " w-full md:block md:w-auto print:flex print:w-1/2 print:justify-end"} id="navbar-default">
-                        <ul className="print:hidden font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <ul className="print:hidden font-medium flex flex-col p-4 md:p-0 mt-4 bg-gray-50 rounded-xl border border-gray-200 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
                             {navigation.map(item => {
                                 return <li key={item.name}>
-
-                                    <a href={item.href} onClick={item.action === 'PRINT' ? print : undefined} className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">{item.name}</a>
+                                    <a href={item.href} onClick={item.action === 'PRINT' ? print : undefined} className="block py-3 px-4 text-gray-700 rounded-xl hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:p-2 transition-all duration-200 font-medium dark:text-gray-200 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">{item.name}</a>
                                 </li>
                             })}
                             {contactInfo.links.map(link => {
-                                return <li key={link.name} className='mx-[0.6rem]'>
-                                    <a href={link.url} target="_blank" aria-label={link.name}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" viewBox="0 0 50 50">
+                                return <li key={link.name} className='mx-2'>
+                                    <a href={link.url} target="_blank" aria-label={link.name} className="block p-2 rounded-xl hover:bg-gray-100 hover:scale-110 transition-all duration-200 group">
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-600 group-hover:text-gray-800 transition-colors duration-200" viewBox="0 0 50 50" fill="currentColor">
                                             <path d={link.svg}></path>
                                         </svg>
                                     </a>
@@ -63,5 +65,6 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav>
+            </div>
         </>)
 }
