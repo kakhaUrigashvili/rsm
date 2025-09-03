@@ -5,7 +5,7 @@ import { contactInfo } from './data'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: contactInfo.name,
+  title: `${contactInfo.name} - Resume`,
   description: contactInfo.description,
 }
 
