@@ -24,8 +24,11 @@ export default function Navbar() {
 
     return (
         <>  
-            <h1 className="text-center only-print">{contactInfo.name} {contactInfo.printLinks.map(link => ` | ${link.display}`)}
+            <h1 className="text-center only-print font-bold text-lg">{contactInfo.name} {contactInfo.printLinks.map(link => ` | ${link.display}`)}
             </h1>
+            <div className="mt-3 mb-5 only-print">
+                <h2 className="text-center">Authorized to work in the US for any employer (US Citizen)</h2>
+            </div>
             <div className="max-w-7xl mx-auto no-print">
                 <nav className="modern-card mx-4 mt-4 mb-8 print:mx-0 print:mt-0 print:mb-4 print:border-b-2 print:border-gray-500 print:rounded-none">
                 <div className="px-6 lg:px-8 py-6 flex flex-wrap items-center justify-between">

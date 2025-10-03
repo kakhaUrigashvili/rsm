@@ -78,7 +78,7 @@ export const sections = {
         ],
       },
       {
-        company: "Conversant Media",
+        company: "Conversant/Alliance Data",
         title: "Senior Software Engineer",
         location: "Chicago, IL",
         dates: "Dec 2016 - Oct 2019",
@@ -86,6 +86,40 @@ export const sections = {
           "Developed backend and frontend for a microservice responsible for updating a Machine Learning Model on the Ad Server. The microservice served as a proxy layer, allowing the Analytical team to quickly and safely update, create, and tune models used for serving advertisements. This led to a 95% increase in the velocity related to model updates.",
           "Served as one of the technical leaders in the effort to migrate engineering teams to use Dockerized on-premise infrastructure. The project took about one year, during which we successfully migrated approximately 30 legacy applications and created 20 new applications. The speed of deployment increased by at least 60% across three engineering organizations, totaling above 150 engineers. Additionally, we achieved extensive standardization of CI/CD practices across a high number of teams.",
           "Created a microservice RESTful API used for serving aggregated business intelligence dashboards. The technologies used were TypeScript, Redis, and PostgreSQL. We were able to achieve approximately a 90% quicker dashboard loading time compared with the Tableau approach."
+        ],
+      },
+      {
+        company: "Conversant/Alliance Data",
+        title: "Business Intelligence Developer",
+        location: "Chicago, IL",
+        dates: "Sept 2014 - Dec 2016",
+        description: [
+          "Created Batch Scheduling/ETL tool using C# and AngularJS to automate manual tasks, saving each BI team member about 1-3 hours of work daily.",
+          "Programmed reporting website using Tableau REST and JavaScript APIs, reducing number of clicks required to find a report to 1-2 clicks.",
+          "Strategically build database objects in reusable and efficient way to provide data for reports.",
+          "Refine legacy SQL code, achieving performance gains of 2-5 times on average."
+        ],
+      },
+      {
+        company: "Strata Decision Technology",
+        title: "Senior Technology Analyst",
+        location: "Chicago, IL",
+        dates: "Apr 2014 - Sept 2014",
+        description: [
+          "Troubleshoot and debugged SaaS enterprise software using SQL Server and Visual Studio.",
+          "Automated troubleshooting task and exception report using SSIS."
+        ],
+      },
+      {
+        company: "CLEAResult",
+        title: "Data Analyst / Programmer",
+        location: "Chicago, IL",
+        dates: "Jul 2013 - Apr 2014",
+        description: [
+          "Created reporting and data entry website with multi access levels using Tableau, SQL Server, MySQL, PHP and JavaScript.",
+          "Integrated Salesforce data with on premise SQL Server using DBAmp driver.",
+          "Programmed SQL CLR functions to help with fuzzy matching and cleaning of data.",
+          "Created web based Energy Savings Calculators using PHP and JavaScript."
         ],
       },
     ],
@@ -119,6 +153,7 @@ export const sections = {
       { "name": "SQS" },
       { "name": "SNS" },
       { "name": "React" },
+      { "name": "Ruby on Rails"},
       { "name": "HTML/CSS" },
       { "name": "Terraform" },
       { "name": "CDK" },
@@ -176,6 +211,11 @@ export const sections = {
         name: "Microsoft Certified Professional",
         issuer: "Microsoft",
         credentialId: "10742085",
+      },
+      {
+        name: "Algorithmic Toolbox",
+        issuer: "University of California San Diego",
+        credentialId: "3513CQ9DZSMX",
       },
     ],
   },
